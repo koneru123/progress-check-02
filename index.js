@@ -6,6 +6,9 @@ let maxValue = function(individualList) {
 }
 
 var max = function(list, maxValue) {
+  if(list.length === 0) {
+    return Math.min();
+  }
   let arr = [];
   let firstIndividualList = maxValue(list[0]);
   for(let i = 1; i < list.length; i++) {
@@ -15,8 +18,8 @@ var max = function(list, maxValue) {
       arr.push(list[i]);
     }
   }
-  //return JSON.stringify(arr);
-  return arr;
+  return JSON.stringify(arr);
+  //return arr;
 }
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
