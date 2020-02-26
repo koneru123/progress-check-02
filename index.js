@@ -28,12 +28,12 @@ var max = function(list, maxValue) {
       }
     }
   }
-  //return JSON.stringify(arr);
+  //return JSON.stringify(newObj);
   return newObj;
 }
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-console.log(max(stooges)); //{name: 'curly', age: 60}
+console.log(max(stooges, function(stooge){ return stooge.age; })); //{name: 'curly', age: 60}
 //console.log(max(stooges));
 //var value = {name: 'moe', age: 40};
 //console.log(maxValue(value));
