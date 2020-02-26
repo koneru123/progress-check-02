@@ -7,7 +7,7 @@ let maxValue = function(individualList) {
 var max = function(list, maxValue) {
   let arr = [];
   if(list.length === 0) {
-    return Math.min();
+    return -Math.min();
   }
   if(arguments.length > 1) {
     let firstIndividualList = maxValue(list[0]);
