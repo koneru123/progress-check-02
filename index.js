@@ -5,35 +5,35 @@ let maxValue = function(individualList) {
   return individualList.age;
 }
 var max = function(list, maxValue) {
-  let arr = [];
+  let newObj = {};
   if(list.length === 0) {
     return -Math.min();
   }
   if(arguments.length > 1) {
     let firstIndividualList = maxValue(list[0]);
     for(let i = 1; i < list.length; i++) {
-      arr = [];
+      newObj = {};
       if(maxValue(list[i]) > firstIndividualList ) {
         firstIndividualList =  maxValue(list[i]);
-        arr.push(list[i]);
+        newObj = list[i];
       }
     }
   } else {
     let firstIndividualList1 = list[0].age;
-    for(let i = 0; i < list.length; i++) {
-      arr = [];
+    for(let i = 1; i < list.length; i++) {
+      newObj = {};
       if(list[i].age > firstIndividualList1) {
         firstIndividualList1 = list[i].age;
-        arr.push(list[i]);
+        newObj = list[i];
       }
     }
   }
-  return JSON.stringify(arr);
-  //return arr;
+  //return JSON.stringify(arr);
+  return newObj;
 }
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-console.log(max(stooges, function(stooge){ return stooge.age; })); //{name: 'curly', age: 60}
+console.log(max(stooges)); //{name: 'curly', age: 60}
 //console.log(max(stooges));
 //var value = {name: 'moe', age: 40};
 //console.log(maxValue(value));
